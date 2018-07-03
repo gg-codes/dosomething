@@ -57,7 +57,7 @@ class Graph {
     public void printGraph() {
         for (int i = 0; i < vertices; i++) {
             printVertice(i, adjListArray[i]);
-//            System.out.println(adjListArray[i].toString());
+            System.out.println(adjListArray[i].toString());
         }
     }
 
