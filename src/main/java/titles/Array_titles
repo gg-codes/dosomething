@@ -1,0 +1,94 @@
+Longest Span with same Sum in two Binary arrays | GeeksforGeeks
+Union and Intersection of two sorted arrays | GeeksforGeeks
+Find the missing number | GeeksforGeeks
+Find the minimum distance between two numbers | GeeksforGeeks
+Leaders in an array | GeeksforGeeks
+Majority Element | GeeksforGeeks
+Find the Number Occurring Odd Number of Times | GeeksforGeeks
+Replace every element with the greatest element on right side | GeeksforGeeks
+Find a Fixed Point in a given array | GeeksforGeeks
+Find a Peak Element | GeeksforGeeks
+Count Strictly Increasing Subarrays | GeeksforGeeks
+Pythagorean Triplet in an array | GeeksforGeeks
+Segregate 0s and 1s in an array | GeeksforGeeks
+Given an array A[] and a number x, check for pair in A[] with sum as x | GeeksforGeeks
+Print missing elements that lie in range 0 – 99 | GeeksforGeeks
+Floor and Ceiling in a sorted array | GeeksforGeeks
+Implement two stacks in an array | GeeksforGeeks
+Find minimum difference between any two elements | GeeksforGeeks
+Find duplicates in O(n) time and O(1) extra space | GeeksforGeeks
+Find lost element from a duplicated array | GeeksforGeeks
+Two elements whose sum is closest to zero | GeeksforGeeks
+Maximum Length Bitonic Subarray | GeeksforGeeks
+Count minimum steps to get the given desired array | GeeksforGeeks
+Find minimum number of merge operations to make an array palindrome | GeeksforGeeks
+Move all zeroes to end of array | GeeksforGeeks
+Maximum difference between two elements (larger element appears after smaller) | GeeksforGeeks
+Write a program to reverse an array or string | GeeksforGeeks
+Merge Overlapping Intervals | GeeksforGeeks
+Print a given matrix in spiral form | GeeksforGeeks
+Search an element in a sorted and rotated array | GeeksforGeeks
+Convert array into Zig-Zag fashion | GeeksforGeeks
+Reverse an array without affecting special characters | GeeksforGeeks
+Count triplets with sum smaller than a given value | GeeksforGeeks
+Length of the largest subarray with contiguous elements | Set 1 | GeeksforGeeks
+Stock Buy Sell to Maximize Profit | GeeksforGeeks
+Find common elements in three sorted arrays | GeeksforGeeks
+Maximum sum such that no two elements are adjacent | GeeksforGeeks
+Search, insert and delete in an unsorted array | GeeksforGeeks
+Find a pair with maximum product in array of Integers | GeeksforGeeks
+Find a pair with the given difference | GeeksforGeeks
+Find the largest pair sum in an unsorted array | GeeksforGeeks
+Sort elements by frequency | Set 1 | GeeksforGeeks
+Find the odd appearing element in O(Log n) time | GeeksforGeeks
+Count number of occurrences (or frequency) in a sorted array | GeeksforGeeks
+Number of pairs (x, y) in an array where x^y is greater than y^x | GeeksforGeeks
+Search, insert and delete in a sorted array | GeeksforGeeks
+Find all triplets with zero sum | GeeksforGeeks
+Find a triplet that sum to a given value | GeeksforGeeks
+Minimum length Unsorted Subarray, sorting which makes the array sorted | GeeksforGeeks"
+Third largest element in an array of distinct elements | GeeksforGeeks
+Find the pair in array whose sum is closest to x | GeeksforGeeks
+Queries for greater than and not less than | GeeksforGeeks
+Equilibrium index of an array | GeeksforGeeks
+Sort an array in wave form | GeeksforGeeks
+Search in an almost sorted array | GeeksforGeeks
+Find the closest pair from two sorted arrays | GeeksforGeeks
+Find the smallest and second smallest elements in an array | GeeksforGeeks
+Find sum of elements in a given array | GeeksforGeeks
+Find largest element in an array | GeeksforGeeks
+Sum of array elements using recursion | GeeksforGeeks
+Shuffle a given array | GeeksforGeeks
+Count pairs with given sum | GeeksforGeeks
+Program to cyclically rotate an array by one | GeeksforGeeks
+Reversal algorithm for array rotation | GeeksforGeeks
+Print Sum Triangle for a given array | GeeksforGeeks
+Find if there is a pair with a given sum in a sorted and rotated array | GeeksforGeeks
+Convert an array to reduced form | Set 1 (Simple and Hashing) | GeeksforGeeks
+Find the minimum value to be added so that array becomes balanced | GeeksforGeeks
+Array Rotation | GeeksforGeeks
+Find the element that appears once where every other element appears twice | GeeksforGeeks
+Find subarray with given sum | Set 1 (Non-negative Numbers) | GeeksforGeeks
+Merge an array of size n into another array of size m+n | GeeksforGeeks
+Find four elements that sum to a given value | Set 1 (n^3 solution) | GeeksforGeeks
+Find four elements that sum to a given value | Set 2 (n^2 Logn Solution) | GeeksforGeeks
+Find subarray with given sum | Set 2 (Handles Negative Numbers) | GeeksforGeeks
+Print All Distinct Elements of a given integer array | GeeksforGeeks
+Quickly find multiple left rotations of an array | GeeksforGeeks
+Find the minimum element in a sorted and rotated array | GeeksforGeeks
+Delete an element from array (Using two traversals and one traversal) | GeeksforGeeks
+Find if there is a subarray with 0 sum | GeeksforGeeks
+Find the smallest missing number | GeeksforGeeks
+Find the first repeating element in an array of integers | GeeksforGeeks
+Rearrange an array in maximum minimum form | Set 1 | GeeksforGeeks
+Find the Increasing subsequence of length three with maximum product | GeeksforGeeks
+k-th smallest absolute difference of two elements in an array | GeeksforGeeks
+Find the Rotation Count in Rotated Sorted array | GeeksforGeeks
+A Product Array Puzzle | GeeksforGeeks
+Find an array element such that all elements are divisible by it | GeeksforGeeks
+Find final value if we double after every successful search in array | GeeksforGeeks
+Largest number that is not a perfect square | GeeksforGeeks
+Minimum swaps required to Sort Binary array | GeeksforGeeks
+Count minimum number of subsets (or subsequences) with consecutive numbers | GeeksforGeeks
+Sort all even numbers in ascending order and odd numbers in descending order | GeeksforGeeks
+Find all elements that appear more than n/k times in an array | GeeksforGeeks
