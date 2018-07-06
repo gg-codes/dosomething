@@ -56,7 +56,6 @@ class ConsoleFormatterTest {
 
 public class ConsoleFormatter {
 
-    private boolean isNormalConsole;
     private Color color;
     private Color background;
     private boolean bold;
@@ -64,7 +63,10 @@ public class ConsoleFormatter {
     private boolean italics;
 
     private ConsoleFormatter() {
-        this.isNormalConsole = true;
+    }
+
+    private boolean isConsoleFormatted() {
+        return color == null && background == null && !bold && !underline && !italics;
     }
 
     public static class BuildFormatter {
@@ -87,7 +89,6 @@ public class ConsoleFormatter {
 
         public BuildFormatter COLOR(Color color) {
             consoleFormatter.color = color;
-            consoleFormatter.isNormalConsole = false;
             return this;
         }
 
@@ -98,7 +99,6 @@ public class ConsoleFormatter {
 
         public BuildFormatter BOLD() {
             consoleFormatter.bold = true;
-            consoleFormatter.isNormalConsole = false;
             return this;
         }
 
@@ -109,7 +109,6 @@ public class ConsoleFormatter {
 
         public BuildFormatter ITALICS() {
             consoleFormatter.italics = true;
-            consoleFormatter.isNormalConsole = false;
             return this;
         }
 
@@ -120,7 +119,6 @@ public class ConsoleFormatter {
 
         public BuildFormatter UNDERLINE() {
             consoleFormatter.underline = true;
-            consoleFormatter.isNormalConsole = false;
             return this;
         }
 
@@ -145,8 +143,8 @@ public class ConsoleFormatter {
             return this;
         }
 
-        private String getColoredString(String stringToColor) {
-            if (consoleFormatter.isNormalConsole) {
+        private String getFormattedString(String stringToColor) {
+            if (consoleFormatter.isConsoleFormatted()) {
                 return stringToColor;
             }
             StringBuilder builder = new StringBuilder();
@@ -178,7 +176,7 @@ public class ConsoleFormatter {
         }
 
         public BuildFormatter append(String str) {
-            stringBuilder.append(getColoredString(str));
+            stringBuilder.append(getFormattedString(str));
             return this;
         }
     }
