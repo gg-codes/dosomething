@@ -1,8 +1,5 @@
 package Graph;
 
-import java.util.LinkedList;
-import java.util.Scanner;
-
 /**
  * Created by GAURAV on 7/2/2018.
  */
@@ -13,7 +10,7 @@ public class Graph_1 {
 //        for (int i = 0; i < tc; i++) {
 //            int verticeCount = sc.nextInt();
 //            int edgeCount = sc.nextInt();
-//            Graph graph = new Graph(verticeCount);
+//            GraphLocal_1 graph = new GraphLocal_1(verticeCount);
 //            for (int j = 0; j < edgeCount; j++) {
 //                int source = sc.nextInt();
 //                int destination = sc.nextInt();
@@ -22,7 +19,7 @@ public class Graph_1 {
 //            graph.printGraph();
 //        }
         int vertices = 5;
-        Graph graph = new Graph(vertices);
+        Graph<Integer> graph = new Graph<Integer>(vertices);
         graph.addEdge(0, 1);
         graph.addEdge(0, 4);
         graph.addEdge(1, 2);
@@ -33,41 +30,4 @@ public class Graph_1 {
         graph.printGraph();
     }
 
-
-}
-
-class Graph {
-    int vertices;
-    LinkedList<Integer>[] adjListArray;
-
-    Graph(int vertices) {
-        this.vertices = vertices;
-        adjListArray = new LinkedList[vertices];
-
-        for (int i = 0; i < vertices; i++) {
-            adjListArray[i] = new LinkedList<>();
-        }
-    }
-
-    void addEdge(int source, int destination) {
-        this.adjListArray[source].add(destination);
-        this.adjListArray[destination].add(source);
-    }
-
-    public void printGraph() {
-        for (int i = 0; i < vertices; i++) {
-            printVertice(i, adjListArray[i]);
-//            System.out.println(adjListArray[i].toString());
-        }
-    }
-
-    private void printVertice(int i, LinkedList<Integer> vertice) {
-        StringBuilder builder = new StringBuilder();
-        builder.append(i);
-        for (Integer node : vertice) {
-            builder.append(" -> ");
-            builder.append(node);
-        }
-        System.out.println(builder.toString());
-    }
 }

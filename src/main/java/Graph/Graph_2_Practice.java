@@ -50,8 +50,7 @@ public class Graph_2_Practice {
                 }
                 builder.append(String.valueOf(visited[i][j])).append(visited[i][j] ? "  " : " ").RESET_COLOR();
             }
-            System.out.print(builder);
-            System.out.println("");
+            System.out.print(builder.append("\n"));
         }
         System.out.println("");
     }
