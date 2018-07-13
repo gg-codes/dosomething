@@ -9,9 +9,6 @@ public class Graph<G> {
     int vertices;
     LinkedList<G>[] adjListArray;
 
-    public Graph() {
-    }
-
     public Graph(int vertices) {
         this.vertices = vertices;
         adjListArray = new LinkedList[vertices];
@@ -41,9 +38,9 @@ public class Graph<G> {
     }
 
     public int getElementIndex(G element) {
-        if (element instanceof Number) {
+        /*if (element instanceof Number) {
             return (Integer) element;
-        }
+        }*/
         int counter = 0;
         for (LinkedList<G> list : adjListArray) {
             if (!list.isEmpty() && list.get(0).equals(element)) {
@@ -74,5 +71,4 @@ public class Graph<G> {
         }
         System.out.println(builder.toString());
     }
-
 }
