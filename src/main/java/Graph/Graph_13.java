@@ -43,6 +43,9 @@ public class Graph_13 {
 
     private <G> void DFSUtil(Graph<G> graph, int v, boolean[] visited) {
         visited[v] = true;
+//        if (graph.adjListArray[v] == null || graph.adjListArray[v].isEmpty()) {
+//            return;
+//        }
         System.out.print(graph.adjListArray[v].getFirst() + " ");
         for (G element : graph.adjListArray[v]) {
             if (element == null) {
