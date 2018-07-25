@@ -32,11 +32,11 @@ public class Queue_5 {
         root.left = new Node(2);
         root.right = new Node(3);
         root.left.left = new Node(4);
-//        root.left.left.right = new Node(8);
+        root.left.left.right = new Node(8);
         root.left.right = new Node(5);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
-        new Queue_5().isCompleteBT(root);
+        System.out.println(new Queue_5().isCompleteTree(root));
     }
 
     /**
@@ -52,6 +52,27 @@ public class Queue_5 {
     boolean isCompleteBT(Node root) {
         int levels = getLevelOfTree(root, 0);
         return levelOrderTraversal(root, levels);
+    }
+
+    private static boolean isCompleteTree(Node root) {
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            Node dequed = queue.poll();
+
+            if (dequed == null)
+                break;
+            queue.add(dequed.left);
+            queue.add(dequed.right);
+        }
+
+        while (!queue.isEmpty()) {
+            if (queue.poll() != null) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private boolean levelOrderTraversal(Node root, int level) {
