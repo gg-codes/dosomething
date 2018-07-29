@@ -1,7 +1,5 @@
 package DynamicProgramming;
 
-import org.apache.commons.lang.time.StopWatch;
-
 import java.util.Arrays;
 
 public class dynamic_programming_1 {
@@ -11,20 +9,33 @@ public class dynamic_programming_1 {
     static int defaultArrValue = -1;
 
     public static void main(String[] args) throws InterruptedException {
-        StopWatch watch = new StopWatch();
-        watch.start();
-        System.out.println(findFibonacciDPMemoized(10));
-//        TimeUnit.SECONDS.sleep(3);
-        watch.suspend();
-        System.out.println(count + ":" + watch.getTime());
-        count = 0;
-        watch.reset();
-        watch.start();
-        System.out.println(findFibonacciDPTabular(7000));
-        watch.stop();
-        System.out.println(count + ":" + watch.getTime());
+        int number = 40;
+        long a = System.currentTimeMillis();
+
+        System.out.println(findFibonacciNormal(number));
+        a = printAndReset(a);
+
+        System.out.println(findFibonacciDPMemoized(number));
+        a = printAndReset(a);
+
+        System.out.println(findFibonacciDPTabular(number));
+        a = printAndReset(a);
     }
 
+    private static long printAndReset(long a) {
+        System.out.println(count + ":" + (System.currentTimeMillis() - a) + "\n");
+        count = 0;
+        return System.currentTimeMillis();
+    }
+
+
+    private static long findFibonacciNormal(int num) {
+        count++;
+        if (num <= 2) {
+            return 1;
+        }
+        return findFibonacciNormal(num - 1) + findFibonacciNormal(num - 2);
+    }
 
     private static long findFibonacciDPMemoized(int num) {
         if (arr == null) {
