@@ -2,18 +2,18 @@ package DynamicProgramming;
 
 import org.apache.commons.lang.time.StopWatch;
 
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
+import java.util.Arrays;
 
 public class dynamic_programming_1 {
     static long[] arr;
     static long[] tabularArr;
     static int count = 0;
+    static int defaultArrValue = -1;
 
     public static void main(String[] args) throws InterruptedException {
         StopWatch watch = new StopWatch();
         watch.start();
-        System.out.println(findFibonacciDPMemoized(7000));
+        System.out.println(findFibonacciDPMemoized(10));
 //        TimeUnit.SECONDS.sleep(3);
         watch.suspend();
         System.out.println(count + ":" + watch.getTime());
@@ -29,6 +29,7 @@ public class dynamic_programming_1 {
     private static long findFibonacciDPMemoized(int num) {
         if (arr == null) {
             arr = new long[num + 1];
+            Arrays.fill(arr, defaultArrValue);
         }
         count++;
         if (num <= 2) {
@@ -40,11 +41,11 @@ public class dynamic_programming_1 {
             arr[num] = arr[num - 1] + arr[num - 2];
         }
         return arr[num];*/
-        if (arr[num - 1] == 0) {
+        if (arr[num - 1] == defaultArrValue) {
             arr[num - 1] = findFibonacciDPMemoized(num - 1);
             arr[num - 1] = arr[num - 1];
         }
-        if (arr[num - 2] == 0) {
+        if (arr[num - 2] == defaultArrValue) {
             arr[num - 2] = findFibonacciDPMemoized(num - 2);
             arr[num - 2] = arr[num - 2];
         }
