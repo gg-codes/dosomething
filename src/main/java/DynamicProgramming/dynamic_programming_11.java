@@ -10,17 +10,64 @@ public class dynamic_programming_11 {
     static int[][] dpArr;
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
-        for (int i = 0; i < T; i++) {
-            int eggs = sc.nextInt();
-            int floors = sc.nextInt();
-            dpArr = new int[eggs + 1][floors + 1];
-            for (int[] arr : dpArr) {
-                Arrays.fill(arr, -1);
-            }
-            System.out.println(eggFloorDP(eggs, floors, false));
+//        Scanner sc = new Scanner(System.in);
+//        int T = sc.nextInt();
+//        for (int i = 0; i < T; i++) {
+//            int eggs = sc.nextInt();
+//            int floors = sc.nextInt();
+//            dpArr = new int[eggs + 1][floors + 1];
+//            for (int[] arr : dpArr) {
+//                Arrays.fill(arr, -1);
+//            }
+//            System.out.println(eggFloorDP(eggs, floors, false));
+        int eggs = 2;
+        int floors = 100;
+        System.out.println(eggFloorDPArr(4, 37));
+    }
+
+    public static int calculate(int eggs, int floors) {
+
+        int T[][] = new int[eggs + 1][floors + 1];
+        int c = 0;
+        for (int i = 0; i <= floors; i++) {
+            T[1][i] = i;
         }
+
+        for (int e = 2; e <= eggs; e++) {
+            for (int f = 1; f <= floors; f++) {
+                T[e][f] = Integer.MAX_VALUE;
+                for (int k = 1; k <= f; k++) {
+                    c = 1 + Math.max(T[e - 1][k - 1], T[e][f - k]);
+                    if (c < T[e][f]) {
+                        T[e][f] = c;
+                    }
+                }
+            }
+        }
+        return T[eggs][floors];
+    }
+
+
+    private static int eggFloorDPArr(int eggs, int floors) {
+        dpArr = new int[eggs + 1][floors + 1];
+        for (int floor = 1; floor <= floors; floor++) {
+            dpArr[1][floor] = floor;
+        }
+
+
+        int c;
+        for (int egg = 2; egg <= eggs; egg++) {
+            for (int floor = 1; floor <= floors; floor++) {
+                dpArr[egg][floor] = Integer.MAX_VALUE;
+                for (int k = 1; k <= floor; k++) {
+                    c = 1 + Math.max(dpArr[egg - 1][k - 1], dpArr[egg][floor - k]);
+                    if (c < dpArr[egg][floor]) {
+                        dpArr[egg][floor] = c;
+                    }
+                }
+            }
+        }
+        return dpArr[eggs][floors];
     }
 
     private static int eggFloorDP(int eggs, int floors, boolean breakScenario) {
