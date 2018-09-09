@@ -12,10 +12,8 @@ import java.util.Queue;
 
 class PositionNode extends Node {
 
-    int position;
-    PositionNode left;
-    PositionNode right;
-    String slashValue;
+    Node left;
+    Node right;
 
     PositionNode(int item) {
         super(item);
@@ -24,23 +22,35 @@ class PositionNode extends Node {
 
 public class PrintBinaryTree {
     public static void main(String[] args) {
-        PositionNode node = new PositionNode(10);
-        node.left = new PositionNode(15);
-        node.left.left = new PositionNode(3);
-        node.left.left.left = new PositionNode(5);
-        node.left.right = new PositionNode(6);
-        node.right = new PositionNode(30);
-        node.right.right = new PositionNode(2);
-        node.right.right.left = new PositionNode(9);
-        node.right.right.right = new PositionNode(8);
-        node.right.right.right.right = new PositionNode(9);
+        /*Node node = new Node(10);
+        node.left = new Node(15);
+        node.left.left = new Node(3);
+        node.left.left.left = new Node(5);
+        node.left.right = new Node(6);
+        node.right = new Node(30);
+        node.right.right = new Node(2);
+        node.right.right.left = new Node(9);
+        node.right.right.right = new Node(8);
+        node.right.right.right.right = new Node(9);*/
+        Node node = new Node(10);
+        node.left = new Node(-5);
+        node.right = new Node(30);
+        node.left.left = new Node(-10);
+        node.left.right = new Node(0);
+        node.left.right.right = new Node(5);
+        node.right.right = new Node(36);
         new PrintBinaryTree().printTree(node);
     }
 
-    private void printTree(PositionNode node) {
-        Queue<PositionNode> bfsQueue = new LinkedList<>();
+    public static void printBinaryTree(Node node) {
+        new PrintBinaryTree().printTree(node);
+        System.out.println("");
+    }
+
+    public void printTree(Node node) {
+        Queue<Node> bfsQueue = new LinkedList<>();
         Queue<Integer> levelQueue = new LinkedList<>();
-        Queue<PositionNode> slashQueue = new LinkedList<>();
+        Queue<Node> slashQueue = new LinkedList<>();
         int level = 1;
         levelQueue.add(level);
         int rootPosition = getTreeWidth(node)[0] + 10;
@@ -52,7 +62,7 @@ public class PrintBinaryTree {
         while (!bfsQueue.isEmpty()) {
             String value = null;
             int currentPosition = 0;
-            PositionNode tempNode;
+            Node tempNode;
             if (printNode) {
                 tempNode = bfsQueue.poll();
                 if (tempNode != null) {
@@ -112,11 +122,11 @@ public class PrintBinaryTree {
         }
     }
 
-    private int[] getTreeWidth(PositionNode node) {
+    private int[] getTreeWidth(Node node) {
         if (node == null) {
             return new int[]{0, 0};
         }
-        PositionNode tempNode = node;
+        Node tempNode = node;
         int leftWidth = -1, rightWidth = -1;
         while (tempNode != null) {
             leftWidth++;
