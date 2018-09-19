@@ -8,18 +8,18 @@ import static binarytree.PrintBinaryTree.printBinaryTree;
 public class TreeUtilities {
 
     public static void main(String[] args) {
-        printBinaryTree(generateTree("13 21 L 13    1 R 21 53 L 21 43 R "));
+//        printBinaryTree(generateTree("13 21 L 13    1 R 21 53 L 21 43 R "));
+        printBinaryTree(generateBST("15 10 20 8 12 16 25"));
     }
 
     public static Node generateTree(String treeData) {
         Node root = null;
-        treeData = treeData.replaceAll("\\s\\s", "\\s");
-        String[] data = treeData.split("\\s");
+        String[] treeDataArray = getTreeDataArray(treeData);
         int treeNodeCount = 0;
-        while (treeNodeCount < data.length) {
-            int a = Integer.parseInt(data[treeNodeCount++]);
-            int a1 = Integer.parseInt(data[treeNodeCount++]);
-            char lr = data[treeNodeCount++].charAt(0);
+        while (treeNodeCount < treeDataArray.length) {
+            int a = Integer.parseInt(treeDataArray[treeNodeCount++]);
+            int a1 = Integer.parseInt(treeDataArray[treeNodeCount++]);
+            char lr = treeDataArray[treeNodeCount++].charAt(0);
             if (treeNodeCount == 3) {
                 root = new Node(a);
                 switch (lr) {
@@ -35,6 +35,11 @@ public class TreeUtilities {
             }
         }
         return root;
+    }
+
+    private static String[] getTreeDataArray(String treeData) {
+        treeData = treeData.replaceAll("\\s\\s", "\\s");
+        return treeData.split("\\s");
     }
 
     public static void insert(Node root, int a, int a1, char lr) {
@@ -54,6 +59,28 @@ public class TreeUtilities {
         }
         insert(root.left, a, a1, lr);
         insert(root.right, a, a1, lr);
+    }
+
+    static Node generateBST(String treeDataStr) {
+
+        String[] treeDataArray = getTreeDataArray(treeDataStr);
+        Node root = null;
+        for (String treeData : treeDataArray) {
+            root = insert(root, Integer.parseInt(treeData));
+        }
+        return root;
+    }
+
+
+    public static Node insert(Node root, int data) {
+        if (root == null) {
+            return (new Node(data));
+        } else if (data < root.data) {
+            root.left = insert(root.left, data);
+        } else if (data > root.data) {
+            root.right = insert(root.right, data);
+        }
+        return root;
     }
 }
 
