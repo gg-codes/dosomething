@@ -1,16 +1,20 @@
-class SieveOfEratosthenes {
-    public static void main(String args[]) {
+/* Java program to find maximum difference between node
+and its ancestor */
 
-        String star = "a--b--c";
-        String sep = "--";
+import binarytree.Node;
+import binarytree.TreeUtilities;
+import binarytree.tushar_roy.Traversals;
 
-        int sepIndex = star.lastIndexOf(sep);
+import static binarytree.PrintBinaryTree.printBinaryTree;
 
-        while (sepIndex != -1) {
-            System.out.print(star.substring(sepIndex + sep.length())+" ");
-            star = star.substring(0, sepIndex);
-            sepIndex = star.lastIndexOf(sep);
-        }
-        System.out.print(star);
+// A binary tree node has key, pointer to left
+// and right child
+public class Test {
+    public static void main(String[] args) {
+        Node node = TreeUtilities.generateTree("1 3 L 1 -1 R 3 4 L 3 6 R 4 7 L 4 8 R -1 4 L -1 5 R");
+        printBinaryTree(node);
+        Traversals.preOrder(node);
     }
 }
+
+

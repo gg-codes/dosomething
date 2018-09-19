@@ -2,7 +2,7 @@ package tag.amazon;
 
 import binarytree.Node;
 import binarytree.TreeUtilities;
-import binarytree.tushar_roy.PrintBinaryTree;
+import binarytree.PrintBinaryTree;
 
 /**
  * Created by GAURAV on 9/16/2018.

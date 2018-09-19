@@ -1,6 +1,6 @@
 package binarytree;
 
-import static binarytree.tushar_roy.PrintBinaryTree.printBinaryTree;
+import static binarytree.PrintBinaryTree.printBinaryTree;
 
 /**
  * Created by GAURAV on 9/16/2018.

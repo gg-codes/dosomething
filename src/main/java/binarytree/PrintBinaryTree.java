@@ -1,6 +1,4 @@
-package binarytree.tushar_roy;
-
-import binarytree.Node;
+package binarytree;
 
 import java.util.Comparator;
 import java.util.LinkedList;
