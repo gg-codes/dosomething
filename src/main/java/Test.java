@@ -1,20 +1,42 @@
-/* Java program to find maximum difference between node
-and its ancestor */
-
 import binarytree.Node;
-import binarytree.TreeUtilities;
-import binarytree.tushar_roy.Traversals;
 
-import static binarytree.PrintBinaryTree.printBinaryTree;
+import java.util.ArrayList;
 
-// A binary tree node has key, pointer to left
-// and right child
-public class Test {
-    public static void main(String[] args) {
-        Node node = TreeUtilities.generateTree("1 3 L 1 -1 R 3 4 L 3 6 R 4 7 L 4 8 R -1 4 L -1 5 R");
-        printBinaryTree(node);
-        Traversals.preOrder(node);
+class GfG
+{
+    static ArrayList<Integer> list = new ArrayList<Integer>();
+    public static boolean findPair(Node root, int target)
+    {
+        list.clear();
+        fillList(root);
+        Integer[] arr = list.toArray(new Integer[list.size()]);
+        return findSum(arr,target);
     }
+
+    private static void fillList(Node root) {
+        if (root == null) {
+            return;
+        }
+        fillList(root.left);
+        list.add(root.data);
+        fillList(root.right);
+    }
+
+    private static boolean findSum(Integer[] arr, int sum) {
+        int left = 0, right = arr.length - 1;
+        while (true) {
+            if (left >= right) {
+                break;
+            }
+            if (arr[left] + arr[right] > sum) {
+                right--;
+            } else if (arr[left] + arr[right] < sum) {
+                left++;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
-
-

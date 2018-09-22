@@ -42,6 +42,15 @@ public class Traversals {
         inOrder(node.right);
     }
 
+    public static void inOrderReverse(Node node) {
+        if (node == null) {
+            return;
+        }
+        inOrderReverse(node.right);
+        System.out.print(node.data + " ");
+        inOrderReverse(node.left);
+    }
+
     public static void postOrder(Node node) {
         if (node == null) {
             return;

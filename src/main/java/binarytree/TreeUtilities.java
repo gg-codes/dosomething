@@ -9,7 +9,7 @@ public class TreeUtilities {
 
     public static void main(String[] args) {
 //        printBinaryTree(generateTree("13 21 L 13    1 R 21 53 L 21 43 R "));
-        printBinaryTree(generateBST("15 10 20 8 12 16 25"));
+        printBinaryTree(generateBinarySearchTree("15 10 20 8 12 16 25"));
     }
 
     public static Node generateTree(String treeData) {
@@ -20,6 +20,7 @@ public class TreeUtilities {
             int a = Integer.parseInt(treeDataArray[treeNodeCount++]);
             int a1 = Integer.parseInt(treeDataArray[treeNodeCount++]);
             char lr = treeDataArray[treeNodeCount++].charAt(0);
+//            System.out.println(a+" "+a1+" "+lr);
             if (treeNodeCount == 3) {
                 root = new Node(a);
                 switch (lr) {
@@ -38,7 +39,7 @@ public class TreeUtilities {
     }
 
     private static String[] getTreeDataArray(String treeData) {
-        treeData = treeData.replaceAll("\\s\\s", "\\s");
+        treeData = treeData.replaceAll("\\s\\s", " ");
         return treeData.split("\\s");
     }
 
@@ -61,7 +62,7 @@ public class TreeUtilities {
         insert(root.right, a, a1, lr);
     }
 
-    static Node generateBST(String treeDataStr) {
+    public static Node generateBinarySearchTree(String treeDataStr) {
 
         String[] treeDataArray = getTreeDataArray(treeDataStr);
         Node root = null;
