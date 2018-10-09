@@ -8,12 +8,12 @@ import java.util.Queue;
  * Created by GAURAV on 8/18/2018.
  */
 
-class PositionNode extends Node {
+class PositionNode1 extends Node {
 
     Node left;
     Node right;
 
-    PositionNode(int item) {
+    PositionNode1(int item) {
         super(item);
     }
 }

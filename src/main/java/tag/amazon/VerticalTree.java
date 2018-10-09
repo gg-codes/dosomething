@@ -1,6 +1,7 @@
 package tag.amazon;
 
 import binarytree.Node;
+import binarytree.PositionNode;
 import binarytree.TreeUtilities;
 
 import java.util.*;
@@ -17,7 +18,7 @@ public class VerticalTree {
 //        TreeView.printVerticalView(TreeUtilities.generateTree(treeData));
     }
 
-    private static void levelOrderTraversal(Node root) {
+    public static void levelOrderTraversal(Node root) {
 
         Queue<PositionNode> nodeQ = new LinkedList<>();
 
@@ -37,13 +38,13 @@ public class VerticalTree {
 
                 if (tempNode.getLeft() != null) {
 
-                    PositionNode leftPositionNode = new PositionNode(tempNode.getLeft(), tempNode.position - 1, tempNode.level + 1);
+                    PositionNode leftPositionNode = new PositionNode(tempNode.getLeft(), tempNode.getPosition() - 1, tempNode.getLevel() + 1);
                     nodeQ.add(leftPositionNode);
                     nodes.add(leftPositionNode);
 
                 }
                 if (tempNode.getRight() != null) {
-                    PositionNode rightPositionNode = new PositionNode(tempNode.getRight(), tempNode.position + 1, tempNode.level + 1);
+                    PositionNode rightPositionNode = new PositionNode(tempNode.getRight(), tempNode.getPosition() + 1, tempNode.getLevel() + 1);
                     nodeQ.add(rightPositionNode);
                     nodes.add(rightPositionNode);
                 }
@@ -57,52 +58,5 @@ public class VerticalTree {
         }*/
 
         System.out.println(nodes);
-    }
-
-    private static class PositionNode implements Comparable<PositionNode> {
-
-        private Node node;
-        private int position;
-        private int level;
-
-        PositionNode(Node node, int position, int level) {
-            this.node = node;
-            this.position = position;
-            this.level = level;
-        }
-
-        int getPosition() {
-            return position;
-        }
-
-        public Node getLeft() {
-            return node.left;
-        }
-
-        public Node getRight() {
-            return node.right;
-        }
-
-        @Override
-        public String toString() {
-            return "{" + node.data + "," + position + "," + level + "}";
-        }
-
-        @Override
-        public int compareTo(PositionNode o) {
-            /*if (this.position == o.position) {
-                if (this.level < o.level) {
-                    return 1;
-                } else if (this.level > o.level) {
-                    return -1;
-                }*/
-//            } else
-            return this.position - o.position;
-//            } else {
-//                return 1;
-//            }
-//            return 0;
-
-        }
     }
 }

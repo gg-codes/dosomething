@@ -17,6 +17,7 @@ public class SmallestRangeInKList {
     }
 
     static void sol(int[][] arr, int n, int k) {
+
         PriorityQueue<Node> pq = new PriorityQueue<>(Comparator.comparingInt(n2 -> n2.data));
         int max = Integer.MIN_VALUE;
 
