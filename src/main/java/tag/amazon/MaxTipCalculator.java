@@ -1,29 +1,15 @@
 package tag.amazon;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class MaxTipCalculator {
-
     public static void main(String[] args) {
 
-/*        Scanner scanner = new Scanner(System.in);
-        int tests = scanner.nextInt();
-
-        for (int test = 0; test < tests; test++) {*/
-
-        int N = 7;
         int X = 3;
         int Y = 4;
 
         Integer[] rahulTipArr = {8, 7, 5, 9, 6, 6, 8};
         Integer[] ankitTipArr = {1, 7, 5, 1, 2, 3, 9};
-        /*for (int j = 0; j < N; j++) {
-            rahulTipArr[j] = scanner.nextInt();
-        }
-        for (int j = 0; j < N; j++) {
-            ankitTipArr[j] = scanner.nextInt();
-        }*/
 
         System.out.println(findSum(rahulTipArr, ankitTipArr, X, Y));
     }
@@ -35,7 +21,9 @@ public class MaxTipCalculator {
             tipArr[i] = new Tip(rahulTipArr[i], ankitTipArr[i]);
         }
 
-        Arrays.sort(tipArr, new Tip());
+        System.out.println(Arrays.toString(tipArr));
+        Arrays.sort(tipArr);
+        System.out.println(Arrays.toString(tipArr));
 
         /*int rahulTipSum = 0;
         for (int i = 0; i < rahulTipArr.length; i++) {
@@ -83,12 +71,12 @@ public class MaxTipCalculator {
 
         if (order < tipArr.length) {
             if (rahulTipCount < X) {
-                for (; order < rahulTipArr.length; order++) {
-                    sum += tipArr[order].rahulTip;
+                while (order < rahulTipArr.length) {
+                    sum += tipArr[order++].rahulTip;
                 }
             } else if (ankitTipCount < Y) {
-                for (; order < ankitTipArr.length; order++) {
-                    sum += tipArr[order].ankitTip;
+                while (order < ankitTipArr.length) {
+                    sum += tipArr[order++].ankitTip;
                 }
             }
         }
@@ -96,7 +84,7 @@ public class MaxTipCalculator {
     }
 }
 
-class Tip implements Comparator<Tip> {
+class Tip implements Comparable<Tip> {
     int rahulTip;
     int ankitTip;
     private int tipDiff;
@@ -107,18 +95,16 @@ class Tip implements Comparator<Tip> {
         this.tipDiff = rahulTip - ankitTip;
     }
 
-    public Tip() {
-
-    }
-
-
-    @Override
-    public int compare(Tip o1, Tip o2) {
-        return Math.abs(o2.tipDiff) - Math.abs(o1.tipDiff);
-    }
-
     @Override
     public String toString() {
-        return tipDiff + "";
+        return rahulTip + " " + ankitTip + " " + tipDiff;
+    }
+
+    @Override
+    public int compareTo(Tip o) {
+        int diff = Math.abs(o.tipDiff) - Math.abs(this.tipDiff);
+//        System.out.println(o + " - " + this + " --> " + diff);
+        System.out.println(diff + " for " + o + " and " + this);
+        return diff;
     }
 }

@@ -30,8 +30,8 @@ public class MinimumPlatform {
         departures = new int[]{1400, 1300};
         System.out.println(getMinPlatforms(arrivals, departures));
 
-        arrivals = new int[]{900,910,940};
-        departures = new int[]{920,950,1000};
+        arrivals = new int[]{900, 910, 940};
+        departures = new int[]{920, 950, 1000};
         System.out.println(getMinPlatforms(arrivals, departures));
     }
 
@@ -56,7 +56,7 @@ public class MinimumPlatform {
         int maxPlatformCount = 1;
 
 
-        for (int arrivalItr = 1, departureItr = 0;
+        for (int arrivalItr = 1, departureItr = 0;/* Comparing second arrival with first departure*/
              arrivalItr < arrivals.length && departureItr < departures.length;
              /* Increment is done inside a loop */) {
 
